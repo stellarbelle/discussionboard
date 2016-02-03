@@ -1,0 +1,7 @@
+/mongod.lock
+/storage.bson
+/diagnostic.data
+/node_modules
+.DS_Store
+*.0
+*.ns

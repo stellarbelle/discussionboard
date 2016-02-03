@@ -1,0 +1,33 @@
+<div ng-controller="postsController">
+  <h1>Welcome, {{ user.name }}!</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Topic</th>
+        <th>User Name</th>
+        <th>Posts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="post in posts">
+        <td ng-bind="post.category"></td>
+        <td ng-bind="post.title"></td>
+        <td><a ng-href="#/user/{{ post.user_id }}">{{ post.user_name }}</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <form>
+    <h4>Add a new Topic</h4>
+    Topic: <input type="text" ng-model="post.title">
+    <br><br>
+    Description: <input type="text" ng-model="post.description">
+    <br><br>
+    Categories: <select ng-model="post.category">
+                  <option value='' disabled>Pick a category</option>
+                  <option>JavaScript</option>
+                </select>
+    <br><br>
+    <input type="submit" ng-click="addPost(user)">
+  </form>
+</div>
